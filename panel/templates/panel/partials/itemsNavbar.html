@@ -1,0 +1,117 @@
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <!-- items -->
+  <!-- productos -->
+  <li class="nav-item">
+    <a href="{% url 'panelProductos' %}" class="nav-link">
+      <i class="nav-icon fas fa-box text-info"></i>
+      <p class="text-white">
+        Productos
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'panelProductos' %}" class="nav-link">
+          <i class="fa fa-list text-info nav-icon"></i>
+          <p class="text-white">Listar Productos</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearProductos' %}" class="nav-link">
+          <i class="fa fa-plus text-info nav-icon"></i>
+          <p class="text-white">Crear Productos</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearGenero' %}" class="nav-link">
+          <i class="fa fa-plus text-info nav-icon"></i>
+          <p class="text-white">Crear Genero</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearMarca' %}" class="nav-link">
+          <i class="fa fa-plus text-info nav-icon"></i>
+          <p class="text-white">Crear Marca</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearColores' %}" class="nav-link">
+          <i class="fa fa-plus text-info nav-icon"></i>
+          <p class="text-white">Crear Colores</p>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearCaracteristica' %}" class="nav-link">
+          <i class="fa fa-plus text-info nav-icon"></i>
+          <p class="text-white">Crear Talle</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- clientes -->
+  <li class="nav-item">
+    <a href="{% url 'panelClientes' %}" class="nav-link">
+      <i class="nav-icon fas fa-user text-success"></i>
+      <p class="text-white">
+        Clientes
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearCliente' %}" class="nav-link">
+          <i class="fa fa-plus text-success nav-icon"></i>
+          <p class="text-white">Crear Clientes</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'panelClientes' %}" class="nav-link">
+          <i class="fa fa-list text-success nav-icon"></i>
+          <p class="text-white">Listar Clientes</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- usuarios -->
+
+  <li class="nav-item">
+    <a href="{% url 'panelProductos' %}" class="nav-link">
+      <i class="nav-icon fas fa-users text-primary"></i>
+      <p class="text-white">
+        Usuarios
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'crearUsuarios' %}" class="nav-link">
+          <i class="fa fa-plus text-primary nav-icon"></i>
+          <p class="text-white">Crear Usuarios</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav nav-treeview" style="display: none">
+      <li class="nav-item">
+        <a href="{% url 'panelUsuarios' %}" class="nav-link">
+          <i class="fa fa-list text-primary nav-icon"></i>
+          <p class="text-white">Listar Usuarios</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <!-- items -->
+</ul>

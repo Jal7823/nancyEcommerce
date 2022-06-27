@@ -1,0 +1,104 @@
+{% extends "panel/panelBase.html" %}
+{% load static %}
+{% block title%}{{title}}{% endblock %}
+{% block containtPanel %}
+
+<!-- data table -->
+
+<h2 class="text-light">Productos</h2>
+<div class="table-responsive">
+  <div class="d-flex justify-content-end mb-4">
+    <a class="btn btn-success" href="{% url 'crearProductos' %}"><i class="fa fa-plus"></i></a>
+  </div>
+
+  <table id="myTable" class="table">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">id</th>
+        <th class="text-center" scope="col">Cod</th>
+        <th class="text-center" scope="col">Nombre</th>
+        <th class="text-center" scope="col">Marca</th>
+        <th class="text-center" scope="col">Precio</th>
+        <th class="text-center" scope="col">Categoria</th>
+        <th class="text-center" scope="col">Tallas</th>
+        <th class="text-center" scope="col">Stock</th>
+        <th class="text-center" scope="col">Imagen</th>
+        <th class="text-center" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in productos %}
+      <tr>
+        <td class="text-center">
+          {% if p.id %} 
+            {{p.id}} 
+          {% else %} 
+            -
+          {% endif %}
+        </td>
+        <td class="text-center">
+          {% if p.cod %} 
+            {{p.cod}} 
+          {% else %} 
+            -
+          {% endif %}
+        </td>
+        <td>{% if p.nombre %} 
+          {{p.nombre}} 
+          {% else %} - {% endif %}</td>
+        <td class="text-center">
+          {% if p.marca %} 
+            {{p.marca}}
+           {% else %} 
+             -
+          {% endif %}
+        </td>
+        <td class="text-right">
+          {% if p.precio %} 
+            $ {{p.precio}} 
+          {% else %} 
+            -
+          {% endif %}
+        </td>
+        <td class="text-center">
+          {% if p.categoria %}
+             {{p.categoria}}
+            {% else %}
+  
+          - {% endif %}
+        </td>
+        <td class="text-center">
+          {% if p.caracteristica %}
+           {% for c in p.caracteristica.all %}
+          {{c.nombre}} /
+          {% endfor %} 
+          {% else %} 
+          - 
+          {% endif %}
+        </td>
+  
+        <td class="text-center">
+          {% if p.stock %} 
+          <p>{{p.stock}}</p>
+          {% else %} 
+          <i class="fa fa-times-circle bg-danger rounded-circle p-2"></i> 
+          {% endif %}
+        </td>
+        <td class="text-center">
+          {% if p.imagen %}
+          <img class="mx-auto" style="width: 40px; height: 40px; object-fit: contain;border-radius: 3px" src="{{p.imagen.url}}" alt="" />
+          {% else %} - {% endif %}
+        </td>
+        <td class="d-flex justify-content-around">
+          <a href="{% url 'detalleProducto' p.id %}"><i class="fa fa-eye text-white bg-success p-2 rounded"></i></a>
+          <a href="{% url 'actualizarProducto' p.id %}"><i class="fa fa-edit text-white bg-warning p-2 rounded"></i></a>
+          <a href="{% url 'eliminarProducto' p.id %}"><i class="fa fa-trash text-white bg-danger p-2 rounded"></i></a>
+        </td>
+      </tr>
+  
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
+ {% endblock %}

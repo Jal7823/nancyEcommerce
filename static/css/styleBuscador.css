@@ -1,0 +1,8 @@
+:root {
+    --colorFont: #f7b658;
+    --bgDrak: #d75093;
+  }
+
+#contenedorBuscador {
+  transition: 1s;
+}

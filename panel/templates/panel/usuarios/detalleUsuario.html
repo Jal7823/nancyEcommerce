@@ -1,0 +1,99 @@
+{% extends "panel/panelBase.html" %} 
+{% load static %} 
+{% block title%}{{title}}{% endblock %} 
+{% block containtPanel %}
+
+<link rel="stylesheet" href="{% static 'css/usuarioDetalle.css' %}">
+
+
+<div class="container">
+    <div class="container">
+        <h1 class="display-4 text-center text-primary text-bold">Datos del Usuario</h1>
+    </div>
+</div>      
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- patient -->
+  <div class="container ">
+    <div class="card card-solid mt-4">
+      <div class="card-body pb-0">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 d-flex align-items-stretch flex-column">
+            <div class="card w-100 bg-light d-flex flex-fill">
+              <div class="card-header text-bold h3 border-bottom-0 text-primary">
+                {{object.nombre|title}} {{object.apellido|title}}
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                      <h2 class="lead m-2">
+                        <ul class="ml-4 mb-0 fa-ul text-muted text-bold">
+                          <li class="small mt-3"><span class="fa-li"><i class="fas fa-lg fa-id-card"></i></span> D.N.I: {{object.dni}}</li>
+                          <li class="small mt-3"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Direccion: {{p.direc}}, {{object.loc}}, {{object.pcia}}</li>
+                          <li class="small mt-3"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telefono #: + 54 - {{object.tlf}}</li>    
+                        </ul>
+  
+                      </h2>
+                      
+                      {% if object.imagen %}
+                        <img src="{{object.imagen.url}}" alt="user-avatar" class="img-patient img-fluid rounded-circle img-patient m-4">
+                      {% else %}
+                        <img src="{% static 'logo.png' %}" alt="user-avatar" class="img-patient img-fluid rounded-circle img-patient m-4">
+                      {% endif %}
+                        
+                    </div>
+  
+                    <hr class="w-100">
+                    <div class="card-header text-bold h3 border-bottom-0 text-primary">
+                      Permisos del usuario
+                    </div>
+      
+                    <ul class="ml-4 mb-0 fa-ul text-muted text-bold ">
+                      <li class="small mt-3 "><span class="fa-li "><i class="fas fa-lg fa-cog "></i></span> Administrador:
+                        {% if object.usuario_administrador %}
+                        <i class="fa fa-check text-success"></i>
+                      {% else %}
+                        <i class="fa fa-times-circle text-danger"></i>
+                      {% endif %}
+                      </li>
+                    </ul>
+                
+                    
+                    <div class="d-flex justify-content-end">
+                      <a href="{% url 'detalleUsuario' object.id %}"><i class="fa fa-eye text-white bg-success p-2 rounded ml-2"></i></a>
+                      <a href="{% url 'actualizarUsuario' object.id %}"><i class="fa fa-edit text-white bg-warning p-2 rounded ml-2"></i></a>            
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<!-- patient -->
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

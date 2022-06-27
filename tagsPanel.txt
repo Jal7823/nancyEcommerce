@@ -1,0 +1,12 @@
+{% extends "panel/panelBase.html" %}
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block containtPanel %}
+
+
+sjjdhkjsahdjsahd
+    
+{% endblock %}

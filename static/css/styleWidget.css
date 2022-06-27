@@ -1,0 +1,15 @@
+:root {
+  --colorFont: #f7b658;
+  --bgDrak: #d75093;
+}
+
+
+#suma:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+#resta:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}

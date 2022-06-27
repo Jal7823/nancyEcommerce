@@ -1,0 +1,15 @@
+:root {
+  --colorFont: #f7b658;
+  --bgDrak: #d75093;
+}
+
+
+#mensaje {
+  transition: 4s;
+}
+
+.btn-primary {
+  background: var(--bgDrak);
+  border: var(--bgDrak);
+}
+

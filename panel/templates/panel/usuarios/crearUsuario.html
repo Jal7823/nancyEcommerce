@@ -1,0 +1,29 @@
+{% extends "panel/panelBase.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block containtPanel %}
+
+<form method="POST" enctype='multipart/form-data' class="d-flex justify-content-center align-content-center">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md">
+            <div class="form-group">
+                {{form |crispy }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Guardar</button>
+        </div>
+    </div>
+  </form>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+    
+{% endblock %}

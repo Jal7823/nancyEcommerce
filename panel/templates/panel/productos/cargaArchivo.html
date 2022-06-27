@@ -1,0 +1,18 @@
+{% extends "panel/panelBase.html" %}
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+
+{% block containtPanel %}
+
+
+  <form method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <input type="file"  name="document">
+    <!-- <a type="submit" class="btn btn-success ml-2" href="{% url 'importarExcel' %}"><i class="fa fa-upload"></i></a> -->
+    <a href="{% url 'importarExcel' %}"><input type="submit" class="btn btn-primary"value="enviar"></a>
+  </form>
+
+{% endblock %}
