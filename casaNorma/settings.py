@@ -20,8 +20,8 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['nancypaginadev.pythonanywhere.com']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['nancypaginadev.pythonanywhere.com']
 
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
@@ -92,24 +92,24 @@ WSGI_APPLICATION = 'casaNorma.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    }
-}
-
-#
 # DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'nancypaginadev$default',
-#             'USER': 'nancypaginadev',
-#             'PASSWORD': '23051988joswelj',
-#             'HOST': 'nancypaginadev.mysql.pythonanywhere-services.com',
-#             'PORT': '3306',
-#         }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase',
 #     }
+# }
+
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'nancypaginadev$default',
+            'USER': 'nancypaginadev',
+            'PASSWORD': '23051988joswelj',
+            'HOST': 'nancypaginadev.mysql.pythonanywhere-services.com',
+            'PORT': '3306',
+        }
+    }
 
 
 # Password validation
@@ -160,6 +160,13 @@ STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR,'static'),
 # )
 
+################## PRODUCTIONS ######################
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_TEMP = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+os.makedirs(STATIC_TEMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
 
 
 MEDIA_URL = '/media/'
