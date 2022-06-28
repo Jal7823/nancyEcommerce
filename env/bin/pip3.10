@@ -1,4 +1,4 @@
-#!/home/jal/Documentos/dev/django/project_in_progress/ecommerce/env/bin/python
+#!/home/jal/Documentos/nancyDjango/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

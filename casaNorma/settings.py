@@ -1,5 +1,3 @@
-
-
 from pathlib import Path
 import os
 from django.urls import reverse_lazy
@@ -41,12 +39,12 @@ INSTALLED_APPS = [
     'mptt',
     'multiselectfield',
     "corsheaders",
+    'crispy_forms',
 
     #apps
     'productos',
     'tienda',
     'pruebas',
-    'crispy_forms',
     'usuarios',
     'carrito',
     'orders',
@@ -147,26 +145,25 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+# ########### LOCALS #################
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_URL = '/static/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR,'static'),
-# )
-
-################## PRODUCTIONS ######################
+#
+# STATICFILES_DIRS = [
+#         BASE_DIR / "static",
+#     ]
+# ########### PRODUCTIONS #################
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_TEMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 os.makedirs(STATIC_TEMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
+
+# STATICFILES_DIR = (
+#     os.path.join(STATIC_ROOT, 'static')
+# )
+#########################
 
 
 MEDIA_URL = '/media/'
